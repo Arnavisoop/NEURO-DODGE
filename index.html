@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEURO DODGE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Audio placeholder (optional) -->
+    <audio id="bgMusic" loop>
+        <source src="bg.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <audio id="sfxHit" src="hit.mp3"></audio>
+    <audio id="sfxPoint" src="point.mp3"></audio>
+    <audio id="sfxLevelUp" src="levelup.mp3"></audio>
+
+    <div id="gameContainer">
+        <!-- Start Menu -->
+        <div id="startMenu" class="menu">
+            <h1>NEURO DODGE</h1>
+            <p>Use WASD or Arrow Keys to move.<br> Dodge the symbols and survive!</p>
+            <button id="startBtn">Start Game</button>
+            <div id="highScoreDisplay">High Score: <span id="highScoreValue">0</span></div>
+        </div>
+
+        <!-- Game HUD -->
+        <div id="hud" class="hud">
+            <div id="levelDisplay">Level: <span id="levelValue">1</span></div>
+            <div id="scoreDisplay">Score: <span id="scoreValue">0</span></div>
+            <div id="healthDisplay">Health: <span id="healthValue">3</span></div>
+            <div id="comboDisplay">Combo: <span id="comboValue">0</span></div>
+            <div id="timerDisplay">Time: <span id="timerValue">0</span>s</div>
+            <div id="aiScoreDisplay">AI Skill: <span id="aiScoreValue">0</span></div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div id="gameCanvas">
+            <div id="player" class="player">�▲</div>
+            <!-- Enemies will be spawned here -->
+        </div>
+
+        <!-- Mobile Controls (hidden by default) -->
+        <div id="mobileControls" class="mobile-controls">
+            <button class="control-btn" data-key="ArrowUp">�▲</button>
+            <button class="control-btn" data-key="ArrowLeft">�◀</button>
+            <button class="control-btn" data-key="ArrowDown">�▼</button>
+            <button class="control-btn" data-key="ArrowRight">�▶</button>
+        </div>
+
+        <!-- Pause Menu -->
+        <div id="pauseMenu" class="menu">
+            <h2>Paused</h2>
+            <button id="resumeBtn">Resume</button>
+            <button id="restartBtn">Restart</button>
+            <button id="quitToMenuBtn">Main Menu</button>
+        </div>
+
+        <!-- Level Complete -->
+        <div id="levelCompleteMenu" class="menu">
+            <h2>Level Complete!</h2>
+            <p>Score: <span id="lcScore"></span></p>
+            <p>Combo: <span id="lcCombo"></span></p>
+            <button id="nextLevelBtn">Next Level</button>
+        </div>
+
+        <!-- Game Over -->
+        <div id="gameOverMenu" class="menu">
+            <h2>Game Over</h2>
+            <p>Final Score: <span id="goScore"></span></p>
+            <p>High Score: <span id="goHighScore"></span></p>
+            <button id="retryBtn">Try Again</button>
+            <button id="menuBtn">Main Menu</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
